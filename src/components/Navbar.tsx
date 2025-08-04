@@ -100,6 +100,7 @@ export const Navbar = () => {
               Testimonials
             </a>
           </div>
+
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button
@@ -113,7 +114,7 @@ export const Navbar = () => {
       </div>
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden bg-black bg-opacity-95">
+        <div className="md:hidden bg-black bg-opacity-95 h-screen">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <a
               href="#home"
