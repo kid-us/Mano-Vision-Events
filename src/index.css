@@ -40,7 +40,7 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-primary: var(--primary);
-  --color-secondary: var(--secondary +++++++++++++++++++++++++++++++++++++++++);
+  --color-secondary: var(--secondary);
 }
 
 :root {
@@ -120,5 +120,12 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+  a {
+    @apply cursor-pointer;
+  }
+
+  button {
+    @apply cursor-pointer;
   }
 }

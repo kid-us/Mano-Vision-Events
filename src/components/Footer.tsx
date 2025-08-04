@@ -107,23 +107,9 @@ export const Footer = () => {
           </div>
         </div>
         <div className="border-t border-zinc-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-500 text-sm mb-4 md:mb-0">
-            © {new Date().getFullYear()} Elegance Catering. All rights reserved.
+          <p className="text-gray-500 text-sm mb-4 md:mb-0 font-serif">
+            © {new Date().getFullYear()} Man-Vision Events. All rights reserved.
           </p>
-          <div className="flex space-x-6">
-            <a
-              href="#"
-              className="text-gray-500 hover:text-primary text-sm transition-colors"
-            >
-              Privacy Policy
-            </a>
-            <a
-              href="#"
-              className="text-gray-500 hover:text-primary text-sm transition-colors"
-            >
-              Terms of Service
-            </a>
-          </div>
         </div>
       </div>
     </footer>

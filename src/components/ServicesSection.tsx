@@ -60,9 +60,6 @@ export const ServicesSection = () => {
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <button className="mt-6 py-2 px-4 border border-primary text-primary hover:bg-primary hover:text-black transition-colors w-full">
-                Learn More
-              </button>
             </div>
           ))}
         </div>

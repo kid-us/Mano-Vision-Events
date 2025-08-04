@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 export const MenuSection = () => {
   const menuItems = [
     {
@@ -32,7 +34,43 @@ export const MenuSection = () => {
         "https://images.unsplash.com/photo-1579954115563-e72bf1381629?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       category: "Dessert",
     },
+    {
+      name: "Grilled Salmon",
+      description:
+        "Salmon fillet with lemon butter sauce, served with asparagus and mashed potatoes",
+      image:
+        "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80",
+      category: "Main Course",
+    },
+    {
+      name: "Rack of Lamb",
+      description:
+        "Herb-crusted rack of lamb with rosemary jus, roasted garlic mashed potatoes and glazed root vegetables",
+      image:
+        "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      category: "Main Course",
+    },
+    {
+      name: "Saffron Sea Bass",
+      description:
+        "Pan-seared Mediterranean sea bass with saffron beurre blanc, fennel purée and crispy leeks",
+      image:
+        "https://images.unsplash.com/photo-1559847844-5315695dadae?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      category: "Main Course",
+    },
+    {
+      name: "Champagne Panna Cotta",
+      description:
+        "Silky champagne-infused panna cotta topped with gold leaf, fresh berries and elderflower syrup",
+      image:
+        "https://images.unsplash.com/photo-1488477181946-6428a0291777?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      category: "Dessert",
+    },
   ];
+
+  const [showFullMenu, setShowFullMenu] = useState(false);
+  const menuItemsToShow = showFullMenu ? menuItems : menuItems.slice(0, 4);
+
   return (
     <section id="menu" className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -47,9 +85,13 @@ export const MenuSection = () => {
             culinary expertise.
           </p>
         </div>
+
         <div className="grid md:grid-cols-2 gap-10">
-          {menuItems.map((item, index) => (
-            <div key={index} className="group relative overflow-hidden">
+          {menuItemsToShow.map((item, index) => (
+            <div
+              key={index}
+              className="group relative overflow-hidden rounded-xl"
+            >
               <div className="relative h-80">
                 <img
                   src={item.image}
@@ -60,7 +102,7 @@ export const MenuSection = () => {
                   {item.category}
                 </div>
               </div>
-              <div className="p-6 bg-zinc-900 border-b-2 border-primtext-primary">
+              <div className="p-6 bg-zinc-900 border-b-2 border-primary text-primary">
                 <h3 className="text-xl font-bold mb-2 text-white group-hover:text-primary transition-colors">
                   {item.name}
                 </h3>
@@ -69,10 +111,16 @@ export const MenuSection = () => {
             </div>
           ))}
         </div>
+
         <div className="mt-12 text-center">
-          <button className="px-8 py-3 bg-primtext-primary text-black font-semibold hover:bg-[#c29b29] transition-colors">
-            View Full Menu
-          </button>
+          {!showFullMenu && (
+            <button
+              onClick={() => setShowFullMenu(true)}
+              className="px-8 py-3 bg-primary text-black font-semibold hover:bg-[#c29b29] transition-colors rounded"
+            >
+              View Full Menu
+            </button>
+          )}
         </div>
       </div>
     </section>

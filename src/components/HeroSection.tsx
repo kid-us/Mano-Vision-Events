@@ -1,12 +1,25 @@
-import { ArrowRight } from "lucide-react";
 export const HeroSection = () => {
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    targetId: string
+  ) => {
+    e.preventDefault();
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <section
       id="home"
       className="relative h-screen w-full flex items-center justify-center bg-cover bg-center"
       style={{
         backgroundImage:
-          'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80")',
+          'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url("https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80")',
       }}
     >
       <div className="text-center px-4 sm:px-6 lg:px-8 max-w-4xl">
@@ -17,12 +30,13 @@ export const HeroSection = () => {
           Elevating your events with exceptional cuisine and impeccable service
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <button className="px-8 py-3 bg-primary text-black font-semibold hover:bg-[#c29b29] transition-colors flex items-center justify-center">
-            Book a Consultation <ArrowRight size={18} className="ml-2" />
-          </button>
-          <button className="px-8 py-3 border border-primary text-primary hover:bg-primary hover:bg-opacity-10 transition-colors">
+          <a
+            href="#menu"
+            onClick={(e) => handleNavClick(e, "menu")}
+            className="px-8 py-3 border border-primary text-primary hover:bg-primary hover:bg-opacity-10 hover:text-black transition-colors duration-200 rounded font-semibold"
+          >
             View Our Menu
-          </button>
+          </a>
         </div>
       </div>
       <div className="absolute bottom-10 left-0 right-0 flex justify-center">

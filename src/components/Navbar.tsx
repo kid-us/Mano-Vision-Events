@@ -3,6 +3,7 @@ import { MenuIcon, X } from "lucide-react";
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {
@@ -16,6 +17,39 @@ export const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    targetId: string
+  ) => {
+    e.preventDefault();
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop,
+        behavior: "smooth",
+      });
+      // Close mobile menu if open
+      if (isOpen) {
+        setIsOpen(false);
+      }
+    }
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
@@ -24,45 +58,47 @@ export const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <div className="flex-shrink-0 flex items-center">
+          <div className="flex-shrink-0 flex items-center font-serif">
             <span className="text-2xl font-bold text-primary">Mano-Vision</span>
             <span className="text-2xl ml-1 text-white">Events</span>
           </div>
           {/* Desktop menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-16">
             <a
               href="#home"
               className="text-white hover:text-primary transition-colors"
+              onClick={(e) => handleNavClick(e, "home")}
             >
               Home
             </a>
             <a
               href="#about"
               className="text-white hover:text-primary transition-colors"
+              onClick={(e) => handleNavClick(e, "about")}
             >
               About
             </a>
             <a
               href="#services"
               className="text-white hover:text-primary transition-colors"
+              onClick={(e) => handleNavClick(e, "services")}
             >
               Services
             </a>
             <a
               href="#menu"
               className="text-white hover:text-primary transition-colors"
+              onClick={(e) => handleNavClick(e, "menu")}
             >
               Menu
             </a>
             <a
               href="#testimonials"
               className="text-white hover:text-primary transition-colors"
+              onClick={(e) => handleNavClick(e, "testimonials")}
             >
               Testimonials
             </a>
-            <button className="px-5 py-2 border border-primary text-primary hover:bg-primary hover:text-black transition-colors">
-              Contact Us
-            </button>
           </div>
           {/* Mobile menu button */}
           <div className="md:hidden">
@@ -114,9 +150,6 @@ export const Navbar = () => {
             >
               Testimonials
             </a>
-            <button className="w-full text-left py-2 px-3 text-primary hover:bg-primary hover:text-black transition-colors">
-              Contact Us
-            </button>
           </div>
         </div>
       )}
