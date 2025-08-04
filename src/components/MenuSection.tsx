@@ -40,7 +40,7 @@ export const MenuSection = () => {
           <h2 className="text-3xl sm:text-4xl font-bold text-primary">
             Menu Highlights
           </h2>
-          <div className="w-24 h-1 bg-[#8B0000] mx-auto mt-4"></div>
+          <div className="w-24 h-1 bg-secondary mx-auto mt-4"></div>
           <p className="mt-6 text-gray-300 max-w-3xl mx-auto">
             Experience our signature dishes, crafted with precision and passion.
             Each plate is designed to delight the senses and showcase our
@@ -56,7 +56,7 @@ export const MenuSection = () => {
                   alt={item.name}
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute top-4 right-4 bg-[#8B0000] px-3 py-1 text-white text-sm">
+                <div className="absolute top-4 right-4 bg-secondary px-3 py-1 text-white text-sm">
                   {item.category}
                 </div>
               </div>

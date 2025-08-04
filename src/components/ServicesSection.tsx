@@ -33,7 +33,7 @@ export const ServicesSection = () => {
           <h2 className="text-3xl sm:text-4xl font-bold text-primary">
             Our Services
           </h2>
-          <div className="w-24 h-1 bg-[#8B0000] mx-auto mt-4"></div>
+          <div className="w-24 h-1 bg-secondary mx-auto mt-4"></div>
           <p className="mt-6 text-gray-300 max-w-3xl mx-auto">
             We offer a range of premium catering services to meet your specific
             needs, each delivered with our signature attention to detail and

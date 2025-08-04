@@ -6,7 +6,7 @@ export const AboutSection = () => {
           <h2 className="text-3xl sm:text-4xl font-bold text-primary">
             About Us
           </h2>
-          <div className="w-24 h-1 bg-[#8B0000] mx-auto mt-4"></div>
+          <div className="w-24 h-1 bg-secondary mx-auto mt-4"></div>
         </div>
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div className="order-2 md:order-1">

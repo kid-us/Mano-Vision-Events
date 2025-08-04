@@ -45,7 +45,7 @@ export const TestimonialsSection = () => {
           <h2 className="text-3xl sm:text-4xl font-bold text-primary">
             Client Testimonials
           </h2>
-          <div className="w-24 h-1 bg-[#8B0000] mx-auto mt-4"></div>
+          <div className="w-24 h-1 bg-secondary mx-auto mt-4"></div>
         </div>
         <div className="relative max-w-4xl mx-auto">
           <div className="bg-black border border-zinc-800 p-8 md:p-12">
