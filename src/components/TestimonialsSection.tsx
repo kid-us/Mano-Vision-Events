@@ -42,7 +42,7 @@ export const TestimonialsSection = () => {
     <section id="testimonials" className="py-20 bg-zinc-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#D4AF37]">
+          <h2 className="text-3xl sm:text-4xl font-bold text-primary">
             Client Testimonials
           </h2>
           <div className="w-24 h-1 bg-[#8B0000] mx-auto mt-4"></div>
@@ -66,7 +66,7 @@ export const TestimonialsSection = () => {
                 />
               </div>
               <div className="text-center">
-                <p className="font-bold text-[#D4AF37]">
+                <p className="font-bold text-primary">
                   {testimonials[currentIndex].name}
                 </p>
                 <p className="text-gray-400">
@@ -78,14 +78,14 @@ export const TestimonialsSection = () => {
           <div className="flex justify-center mt-8 space-x-4">
             <button
               onClick={prevTestimonial}
-              className="p-2 border border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black transition-colors"
+              className="p-2 border border-primary text-primary hover:bg-primary hover:text-black transition-colors"
               aria-label="Previous testimonial"
             >
               <ChevronLeft size={24} />
             </button>
             <button
               onClick={nextTestimonial}
-              className="p-2 border border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black transition-colors"
+              className="p-2 border border-primary text-primary hover:bg-primary hover:text-black transition-colors"
               aria-label="Next testimonial"
             >
               <ChevronRight size={24} />
@@ -97,7 +97,7 @@ export const TestimonialsSection = () => {
                 key={index}
                 onClick={() => setCurrentIndex(index)}
                 className={`w-3 h-3 mx-1 rounded-full ${
-                  currentIndex === index ? "bg-[#D4AF37]" : "bg-gray-500"
+                  currentIndex === index ? "bg-primary" : "bg-gray-500"
                 }`}
                 aria-label={`Go to testimonial ${index + 1}`}
               />

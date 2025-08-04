@@ -37,7 +37,7 @@ export const MenuSection = () => {
     <section id="menu" className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#D4AF37]">
+          <h2 className="text-3xl sm:text-4xl font-bold text-primary">
             Menu Highlights
           </h2>
           <div className="w-24 h-1 bg-[#8B0000] mx-auto mt-4"></div>
@@ -60,8 +60,8 @@ export const MenuSection = () => {
                   {item.category}
                 </div>
               </div>
-              <div className="p-6 bg-zinc-900 border-b-2 border-[#D4AF37]">
-                <h3 className="text-xl font-bold mb-2 text-white group-hover:text-[#D4AF37] transition-colors">
+              <div className="p-6 bg-zinc-900 border-b-2 border-primtext-primary">
+                <h3 className="text-xl font-bold mb-2 text-white group-hover:text-primary transition-colors">
                   {item.name}
                 </h3>
                 <p className="text-gray-400">{item.description}</p>
@@ -70,7 +70,7 @@ export const MenuSection = () => {
           ))}
         </div>
         <div className="mt-12 text-center">
-          <button className="px-8 py-3 bg-[#D4AF37] text-black font-semibold hover:bg-[#c29b29] transition-colors">
+          <button className="px-8 py-3 bg-primtext-primary text-black font-semibold hover:bg-[#c29b29] transition-colors">
             View Full Menu
           </button>
         </div>

@@ -11,16 +11,16 @@ export const HeroSection = () => {
     >
       <div className="text-center px-4 sm:px-6 lg:px-8 max-w-4xl">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-white">
-          <span className="text-[#D4AF37]">Exquisite</span> Culinary Experiences
+          <span className="text-primary">Exquisite</span> Culinary Experiences
         </h1>
         <p className="text-xl sm:text-2xl mb-10 text-gray-200 max-w-2xl mx-auto">
           Elevating your events with exceptional cuisine and impeccable service
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <button className="px-8 py-3 bg-[#D4AF37] text-black font-semibold hover:bg-[#c29b29] transition-colors flex items-center justify-center">
+          <button className="px-8 py-3 bg-primary text-black font-semibold hover:bg-[#c29b29] transition-colors flex items-center justify-center">
             Book a Consultation <ArrowRight size={18} className="ml-2" />
           </button>
-          <button className="px-8 py-3 border border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:bg-opacity-10 transition-colors">
+          <button className="px-8 py-3 border border-primary text-primary hover:bg-primary hover:bg-opacity-10 transition-colors">
             View Our Menu
           </button>
         </div>
@@ -28,7 +28,7 @@ export const HeroSection = () => {
       <div className="absolute bottom-10 left-0 right-0 flex justify-center">
         <a
           href="#about"
-          className="text-white hover:text-[#D4AF37] transition-colors animate-bounce"
+          className="text-white hover:text-primary transition-colors animate-bounce"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
