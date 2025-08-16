@@ -25,6 +25,7 @@ import {
   twentyOne,
   twentyTwo,
 } from "../assets/catering";
+import { X } from "lucide-react";
 
 interface Testimony {
   id: number;
@@ -107,22 +108,22 @@ const Marquee = () => {
 
       {/* Modal */}
       {isOpen && (
-        <div className="fixed inset-0 bg-black/90 bg-opacity-80 flex items-center justify-center z-50 p-4">
-          {/* Close Button */}
-          <button
-            className="absolute top-5 right-5 text-white text-2xl z-50"
-            onClick={closeModal}
-          >
-            ✖
-          </button>
-
+        <div className="fixed inset-0 bg-black/80 bg-opacity-80 flex items-center justify-center z-50 p-4">
           {/* Modal Content */}
-          <div className="bg-black rounded-lg p-4 w-full max-w-5xl max-h-[80vh] overflow-auto">
+          <div className="relative bg-black/70 border border-zinc-800 overflow-x-hidden rounded-lg p-4 w-full max-w-5xl max-h-[80vh] overflow-auto">
+            {/* Close Button */}
+            <button
+              className="fixed lg:top-16 lg:right-50 right-2 top-5 text-white text-2xl z-50"
+              onClick={closeModal}
+            >
+              <X size={20} />
+            </button>
+
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
               {allImages.map((t) => (
                 <div
                   key={t.id}
-                  className="w-full rounded-lg border border-white/20 overflow-hidden transform transition hover:scale-105 hover:shadow-lg"
+                  className="w-full rounded-lg border border-primary overflow-hidden transform transition hover:scale-105 hover:shadow-lg"
                 >
                   <img
                     src={t.img}

@@ -43,10 +43,8 @@ const ContactUsForm = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-10">
-      <h2 className="text-3xl sm:text-4xl font-bold text-primary ">
-        Contact US
-      </h2>
+    <div dir="rtl" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-10">
+      <h2 className="text-3xl sm:text-4xl font-bold text-primary ">צור קשר</h2>
       <div className="w-24 h-1 bg-secondary mt-4"></div>
 
       <Form {...form}>
@@ -60,7 +58,7 @@ const ContactUsForm = () => {
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Name</FormLabel>
+                <FormLabel>שם</FormLabel>
                 <FormControl>
                   <Input
                     {...field}
@@ -78,7 +76,7 @@ const ContactUsForm = () => {
             name="phone"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Phone</FormLabel>
+                <FormLabel>טלפון</FormLabel>
                 <FormControl>
                   <Input
                     {...field}
@@ -96,7 +94,7 @@ const ContactUsForm = () => {
             name="message"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Message</FormLabel>
+                <FormLabel> הודעה</FormLabel>
                 <FormControl>
                   <Textarea
                     {...field}
@@ -113,7 +111,7 @@ const ContactUsForm = () => {
             type="submit"
             className="bg-primary text-black rounded w-80 h-12"
           >
-            Send Message
+             שלח הודעה
           </Button>
         </form>
       </Form>
