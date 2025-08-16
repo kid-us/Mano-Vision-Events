@@ -1,70 +1,68 @@
-import { useEffect, useState } from "react";
-import { MenuIcon, X } from "lucide-react";
+// import { useState } from "react";
+// import { MenuIcon, X } from "lucide-react";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
+  // const [isScrolled, setIsScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (window.scrollY > 10) {
+  //       setIsScrolled(true);
+  //     } else {
+  //       setIsScrolled(false);
+  //     }
+  //   };
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
-  const handleNavClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    targetId: string
-  ) => {
-    e.preventDefault();
-    const targetElement = document.getElementById(targetId);
-    if (targetElement) {
-      window.scrollTo({
-        top: targetElement.offsetTop,
-        behavior: "smooth",
-      });
-      // Close mobile menu if open
-      if (isOpen) {
-        setIsOpen(false);
-      }
-    }
-  };
+  // const handleNavClick = (
+  //   e: React.MouseEvent<HTMLAnchorElement>,
+  //   targetId: string
+  // ) => {
+  //   e.preventDefault();
+  //   const targetElement = document.getElementById(targetId);
+  //   if (targetElement) {
+  //     window.scrollTo({
+  //       top: targetElement.offsetTop,
+  //       behavior: "smooth",
+  //     });
+  //     // Close mobile menu if open
+  //     if (isOpen) {
+  //       setIsOpen(false);
+  //     }
+  //   }
+  // };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (window.scrollY > 10) {
+  //       setIsScrolled(true);
+  //     } else {
+  //       setIsScrolled(false);
+  //     }
+  //   };
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-black bg-opacity-95 shadow-lg" : "bg-transparent"
-      }`}
+      className={`fixed w-full z-50 transition-all duration-300 backdrop-blur `}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          <div className="relative z-50 flex-shrink-0 flex items-center font-serif">
-            <span className="text-2xl font-bold text-primary">Mano-Vision</span>
-            <span className="text-2xl ml-1 text-white">Events</span>
+        <div className="flex justify-between items-center py-4">
+          <div className="relative z-50 flex-shrink-0 flex items-center font-black">
+            <span className="text-3xl text-primary">Mano-Vision</span>
+            <span className="text-3xl ml-1 text-white">Events</span>
           </div>
           {/* Desktop menu */}
-          <div className="hidden md:flex items-center space-x-16">
+          {/* <div className="hidden md:flex items-center space-x-16">
             <a
               href="#home"
               className="text-white hover:text-primary transition-colors"
@@ -93,21 +91,21 @@ const Navbar = () => {
             >
               Menu
             </a>
-          </div>
+          </div> */}
 
           {/* Mobile menu button */}
-          <div className="md:hidden relative z-50">
+          {/* <div className="md:hidden relative z-50">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-white hover:text-primary transition-colors"
             >
               {isOpen ? <X size={24} /> : <MenuIcon size={24} />}
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
       {/* Mobile menu */}
-      {isOpen && (
+      {/* {isOpen && (
         <div className="md:hidden bg-black bg-opacity-95 h-screen absolute w-full top-0 pt-20">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <a
@@ -140,7 +138,7 @@ const Navbar = () => {
             </a>
           </div>
         </div>
-      )}
+      )} */}
     </nav>
   );
 };

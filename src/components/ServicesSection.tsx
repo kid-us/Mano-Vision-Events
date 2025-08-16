@@ -1,30 +1,33 @@
-import { Users, Briefcase, Wine } from "lucide-react";
+import { Wine, Heart, CalendarRange } from "lucide-react";
 
 const ServicesSection = () => {
   const services = [
     {
-      icon: <Users size={40} className="text-primary" />,
-      title: "Weddings & Celebrations",
+      icon: <Heart fill="#d4af37" size={40} className="text-primary" />,
+      title: "גריל שף",
       description:
-        "Create unforgettable memories with our bespoke wedding and celebration catering services, tailored to your unique vision.",
+        "אנחנו מביאים את הבשר האיכותי ביותר, בגריל שהופך כל ביס לחוויה. מתאים לאירועים, אירוח משפחתי, מסיבות או ארוחה מפנקת",
       image:
         "https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      capacity: "עד 50 איש",
     },
     {
-      icon: <Briefcase size={40} className="text-primary" />,
-      title: "Corporate Events",
+      icon: <CalendarRange size={40} className="text-primary" />,
+      title: "עד 30 איש",
       description:
-        "Impress clients and colleagues with sophisticated catering solutions for meetings, conferences, and corporate gatherings.",
+        "קייטרינג בשרי עם מגוון אפשרויות צלייה, מלווה בסלטים ופחמימות לבחירתכם. אפשרות הכנה במקום או מראש",
       image:
         "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      capacity: "עד 50 איש",
     },
     {
       icon: <Wine size={40} className="text-primary" />,
-      title: "Private Dining",
+      title: "אירועי בוטיק",
       description:
-        "Experience restaurant-quality dining in the comfort of your home with our private chef and service staff.",
+        "מביאים את האירוע המושלם לכל מקום בארץ עם מגוון רחב של בשרים איכותי המותאם לדמיונכם ורצונכם",
       image:
         "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      capacity: "עד 30 איש",
     },
   ];
   return (
@@ -60,6 +63,7 @@ const ServicesSection = () => {
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
+              <p className="mt-5 text-xl text-primary">{service.capacity}</p>
             </div>
           ))}
         </div>

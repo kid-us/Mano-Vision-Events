@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <footer className="bg-black border-t border-zinc-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           <div>
             <div className="flex items-center mb-6">
               <span className="text-2xl font-bold text-primary">
@@ -18,7 +18,7 @@ const Footer = () => {
               </span>
               <span className="text-2xl ml-1 text-white">Events</span>
             </div>
-            <p className="text-gray-400 mb-6">
+            <p className="text-gray-400 mb-6 me-10">
               Elevating your events with exceptional cuisine and impeccable
               service since 2005.
             </p>
@@ -43,7 +43,7 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          <div>
+          <div className="lg:flex space-x-10">
             <h3 className="text-lg font-bold text-white mb-6">Contact Us</h3>
             <div className="space-y-4">
               <div className="flex items-start">
@@ -62,7 +62,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div>
+          {/* <div>
             <h3 className="text-lg font-bold text-white mb-6">Quick Links</h3>
             <ul className="space-y-3">
               <li>
@@ -98,7 +98,7 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
         <div className="border-t border-zinc-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm mb-4 md:mb-0 font-serif">

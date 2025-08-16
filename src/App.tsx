@@ -1,5 +1,6 @@
 import "./App.css";
 import { AboutSection } from "./components/AboutSection";
+import ContactUsForm from "./components/ContactUs";
 import Footer from "./components/Footer";
 import HeroSection from "./components/HeroSection";
 import Marquee from "./components/Marquee";
@@ -15,6 +16,7 @@ function App() {
         <AboutSection />
         <ServicesSection />
         <Marquee />
+        <ContactUsForm />
       </main>
       <Footer />
     </div>
