@@ -6,15 +6,17 @@ import {
   Phone,
   MapPin,
 } from "lucide-react";
-export const Footer = () => {
+const Footer = () => {
   return (
     <footer className="bg-black border-t border-zinc-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div>
             <div className="flex items-center mb-6">
-              <span className="text-2xl font-bold text-primary">ELEGANCE</span>
-              <span className="text-2xl ml-1 text-white">Catering</span>
+              <span className="text-2xl font-bold text-primary">
+                Mano-Vision
+              </span>
+              <span className="text-2xl ml-1 text-white">Events</span>
             </div>
             <p className="text-gray-400 mb-6">
               Elevating your events with exceptional cuisine and impeccable
@@ -95,14 +97,6 @@ export const Footer = () => {
                   Menu
                 </a>
               </li>
-              <li>
-                <a
-                  href="#testimonials"
-                  className="text-gray-400 hover:text-primary transition-colors"
-                >
-                  Testimonials
-                </a>
-              </li>
             </ul>
           </div>
         </div>
@@ -115,3 +109,5 @@ export const Footer = () => {
     </footer>
   );
 };
+
+export default Footer;

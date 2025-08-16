@@ -1,5 +1,6 @@
 import { Users, Briefcase, Wine } from "lucide-react";
-export const ServicesSection = () => {
+
+const ServicesSection = () => {
   const services = [
     {
       icon: <Users size={40} className="text-primary" />,
@@ -44,10 +45,10 @@ export const ServicesSection = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group bg-black border border-zinc-800 hover:border-primary transition-colors p-6 flex flex-col"
+              className="group bg-black border border-primary transition-colors p-6 flex flex-col"
             >
               <div className="mb-6">{service.icon}</div>
-              <h3 className="text-xl font-bold mb-4 text-white group-hover:text-primary transition-colors">
+              <h3 className="text-xl font-bold mb-4 text-primary transition-colors">
                 {service.title}
               </h3>
               <p className="text-gray-400 mb-6 flex-grow">
@@ -67,3 +68,5 @@ export const ServicesSection = () => {
     </section>
   );
 };
+
+export default ServicesSection;

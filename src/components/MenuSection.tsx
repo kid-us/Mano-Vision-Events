@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const MenuSection = () => {
+const MenuSection = () => {
   const menuItems = [
     {
       name: "Seared Scallops",
@@ -126,3 +126,5 @@ export const MenuSection = () => {
     </section>
   );
 };
+
+export default MenuSection;

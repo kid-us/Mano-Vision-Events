@@ -1,4 +1,6 @@
-export const HeroSection = () => {
+import { hero } from "../assets";
+
+const HeroSection = () => {
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
     targetId: string
@@ -18,8 +20,7 @@ export const HeroSection = () => {
       id="home"
       className="relative h-screen w-full flex items-center justify-center bg-cover bg-center"
       style={{
-        backgroundImage:
-          'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url("https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80")',
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url(${hero})`,
       }}
     >
       <div className="text-center px-4 sm:px-6 lg:px-8 max-w-4xl">
@@ -33,7 +34,7 @@ export const HeroSection = () => {
           <a
             href="#menu"
             onClick={(e) => handleNavClick(e, "menu")}
-            className="px-8 py-3 border border-primary text-primary hover:bg-primary hover:bg-opacity-10 hover:text-black transition-colors duration-200 rounded font-semibold"
+            className="px-8 py-3 border border-primary text-black bg-primary hover:bg-primary/60 transition-colors duration-200 rounded font-semibold"
           >
             View Our Menu
           </a>
@@ -62,3 +63,5 @@ export const HeroSection = () => {
     </section>
   );
 };
+
+export default HeroSection;

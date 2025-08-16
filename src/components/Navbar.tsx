@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { MenuIcon, X } from "lucide-react";
-export const Navbar = () => {
+
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -58,7 +59,7 @@ export const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <div className="flex-shrink-0 flex items-center font-serif">
+          <div className="relative z-50 flex-shrink-0 flex items-center font-serif">
             <span className="text-2xl font-bold text-primary">Mano-Vision</span>
             <span className="text-2xl ml-1 text-white">Events</span>
           </div>
@@ -92,17 +93,10 @@ export const Navbar = () => {
             >
               Menu
             </a>
-            <a
-              href="#testimonials"
-              className="text-white hover:text-primary transition-colors"
-              onClick={(e) => handleNavClick(e, "testimonials")}
-            >
-              Testimonials
-            </a>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden relative z-50">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-white hover:text-primary transition-colors"
@@ -114,7 +108,7 @@ export const Navbar = () => {
       </div>
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden bg-black bg-opacity-95 h-screen">
+        <div className="md:hidden bg-black bg-opacity-95 h-screen absolute w-full top-0 pt-20">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <a
               href="#home"
@@ -144,16 +138,11 @@ export const Navbar = () => {
             >
               Menu
             </a>
-            <a
-              href="#testimonials"
-              className="block py-2 px-3 text-white hover:text-primary transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
-              Testimonials
-            </a>
           </div>
         </div>
       )}
     </nav>
   );
 };
+
+export default Navbar;
