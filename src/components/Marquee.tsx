@@ -106,7 +106,7 @@ const Marquee = () => {
       </div>
 
       {/* Modal */}
-      {isOpen && (
+    {isOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-80 flex items-start justify-center z-50 p-6 overflow-auto">
           <button
             className="fixed top-5 lg:right-10 right-3 text-white text-2xl z-50"
