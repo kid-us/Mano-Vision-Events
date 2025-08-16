@@ -2,7 +2,7 @@ import "./App.css";
 import { AboutSection } from "./components/AboutSection";
 import Footer from "./components/Footer";
 import HeroSection from "./components/HeroSection";
-import MenuSection from "./components/MenuSection";
+import Marquee from "./components/Marquee";
 import Navbar from "./components/Navbar";
 import ServicesSection from "./components/ServicesSection";
 
@@ -14,7 +14,7 @@ function App() {
         <HeroSection />
         <AboutSection />
         <ServicesSection />
-        <MenuSection />
+        <Marquee />
       </main>
       <Footer />
     </div>
