@@ -106,28 +106,32 @@ const Marquee = () => {
       </div>
 
       {/* Modal */}
-    {isOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-start justify-center z-50 p-6 overflow-auto">
+      {isOpen && (
+        <div className="fixed inset-0 bg-black/90 bg-opacity-80 flex items-center justify-center z-50 p-4">
+          {/* Close Button */}
           <button
-            className="fixed top-5 lg:right-10 right-3 text-white text-2xl z-50"
+            className="absolute top-5 right-5 text-white text-2xl z-50"
             onClick={closeModal}
           >
             ✖
           </button>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 w-full max-w-7xl lg:my-5 my-2">
-            {allImages.map((t) => (
-              <div
-                key={t.id}
-                className="w-full rounded-lg border border-white/20 overflow-hidden transform transition hover:scale-105 hover:shadow-lg"
-              >
-                <img
-                  src={t.img}
-                  alt={`Gallery ${t.id}`}
-                  className="w-full h-48 md:h-60 object-contain bg-black"
-                />
-              </div>
-            ))}
+          {/* Modal Content */}
+          <div className="bg-black rounded-lg p-4 w-full max-w-5xl max-h-[80vh] overflow-auto">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+              {allImages.map((t) => (
+                <div
+                  key={t.id}
+                  className="w-full rounded-lg border border-white/20 overflow-hidden transform transition hover:scale-105 hover:shadow-lg"
+                >
+                  <img
+                    src={t.img}
+                    alt={`Gallery ${t.id}`}
+                    className="w-full h-48 md:h-60 object-contain bg-black"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       )}
