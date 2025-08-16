@@ -25,7 +25,6 @@ import {
   twentyOne,
   twentyTwo,
 } from "../assets/catering";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Testimony {
   id: number;
@@ -58,25 +57,14 @@ const Marquee = () => {
     { id: 22, img: twentyTwo },
   ];
 
-  // Divide into 2 rows
-  const row1 = allImages.slice(0, 11);
-  const row2 = allImages.slice(11, 22);
-
   // Modal state
   const [isOpen, setIsOpen] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
 
-  const openModal = (index: number) => {
-    setCurrentIndex(index);
+  const openModal = () => {
     setIsOpen(true);
   };
 
   const closeModal = () => setIsOpen(false);
-
-  const nextImage = () =>
-    setCurrentIndex((prev) => (prev + 1) % allImages.length);
-  const prevImage = () =>
-    setCurrentIndex((prev) => (prev === 0 ? allImages.length - 1 : prev - 1));
 
   return (
     <section id="menu" className="py-20 bg-black">
@@ -96,42 +84,14 @@ const Marquee = () => {
         {/* Forward Marquee */}
         <div
           className="marquee fadeout-horizontal"
-          style={{ "--num-items": row1.length } as React.CSSProperties}
+          style={{ "--num-items": allImages.length } as React.CSSProperties}
         >
           <div className="marquee-track">
-            {row1.map((t, i) => (
+            {allImages.map((t) => (
               <div
                 className="marquee-item cursor-pointer bg-primary/5"
                 style={{ "--item-position": t.id } as React.CSSProperties}
-                onClick={() => openModal(i)}
-                key={t.id}
-              >
-                <img
-                  src={t.img}
-                  className="h-full !object-contain"
-                  alt={`Gallery - ${t.id}`}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Reverse Marquee */}
-        <div
-          className="marquee fadeout-horizontal mt-10"
-          style={
-            {
-              "--num-items": row2.length,
-              "--direction": "reverse",
-            } as React.CSSProperties
-          }
-        >
-          <div className="marquee-track">
-            {row2.map((t, i) => (
-              <div
-                className="marquee-item cursor-pointer bg-primary/5"
-                style={{ "--item-position": t.id } as React.CSSProperties}
-                onClick={() => openModal(i + row1.length)}
+                onClick={() => openModal()}
                 key={t.id}
               >
                 <img
@@ -147,30 +107,28 @@ const Marquee = () => {
 
       {/* Modal */}
       {isOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-start justify-center z-50 p-6 overflow-auto">
           <button
-            className="absolute top-5 right-5 text-white text-2xl"
+            className="fixed top-5 lg:right-10 right-3 text-white text-2xl z-50"
             onClick={closeModal}
           >
             ✖
           </button>
-          <button
-            className="absolute left-5 text-white text-3xl"
-            onClick={prevImage}
-          >
-            <ChevronLeft className="bg-primary rounded text-black" />
-          </button>
-          <img
-            src={allImages[currentIndex].img}
-            alt={`Gallery ${allImages[currentIndex].id}`}
-            className="max-h-[90%] max-w-[90%] rounded-lg shadow-lg object-contain"
-          />
-          <button
-            className="absolute right-5 text-white text-3xl"
-            onClick={nextImage}
-          >
-            <ChevronRight className="bg-primary rounded text-black" />
-          </button>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 w-full max-w-7xl lg:my-5 my-2">
+            {allImages.map((t) => (
+              <div
+                key={t.id}
+                className="w-full rounded-lg border border-white/20 overflow-hidden transform transition hover:scale-105 hover:shadow-lg"
+              >
+                <img
+                  src={t.img}
+                  alt={`Gallery ${t.id}`}
+                  className="w-full h-48 md:h-60 object-contain bg-black"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       )}
     </section>
