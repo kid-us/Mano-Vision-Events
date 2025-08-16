@@ -13,7 +13,7 @@ const ServicesSection = () => {
     },
     {
       icon: <CalendarRange size={40} className="text-primary" />,
-      title: "עד 30 איש",
+      title: "קייטרינג",
       description:
         "קייטרינג בשרי עם מגוון אפשרויות צלייה, מלווה בסלטים ופחמימות לבחירתכם. אפשרות הכנה במקום או מראש",
       image:

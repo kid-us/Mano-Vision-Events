@@ -52,7 +52,7 @@ const ContactUsForm = () => {
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="space-y-6 mt-10"
+          className="space-y-6 mt-10 max-w-2xl"
         >
           {/* Name Field */}
           <FormField
@@ -63,7 +63,6 @@ const ContactUsForm = () => {
                 <FormLabel>Name</FormLabel>
                 <FormControl>
                   <Input
-                    placeholder="Your Name"
                     {...field}
                     className="h-12 rounded mt-2 border border-zinc-600"
                   />
@@ -82,7 +81,6 @@ const ContactUsForm = () => {
                 <FormLabel>Phone</FormLabel>
                 <FormControl>
                   <Input
-                    placeholder="+251900000000"
                     {...field}
                     className="h-12 rounded mt-2 border border-zinc-600"
                   />
@@ -101,7 +99,6 @@ const ContactUsForm = () => {
                 <FormLabel>Message</FormLabel>
                 <FormControl>
                   <Textarea
-                    placeholder="Your message..."
                     {...field}
                     className="h-26 rounded mt-2 border border-zinc-600 resize-none"
                   />
